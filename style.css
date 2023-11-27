@@ -1,0 +1,200 @@
+:root{
+    --outide: #488cd9;
+    --inner: #0c0e94;
+    --text: #e58059;
+    --white-color: #fdfefe;
+    --gradient: linear-gradient(to right, var(--text), var(--white-color));
+}
+*{
+    padding: 0;
+    margin: 0;
+    /* box-sizing: border-box; */
+}
+.wrapper{
+    height: 100vh;
+    width: 100%;
+    float: left;
+    position: relative;
+}
+#clock{
+    position: relative;
+    height: 280px;
+    width: 280px;
+    background: var(--inner);
+    border: 18px solid #00000080;
+    border-radius: 50%;
+    margin: 200px auto;
+    box-shadow: inset 0 5px 25px #00000080,
+    0 5px 30px #00000080,
+    0 5px 35px #00000080,
+    0 5px 35px #00000080,
+    0 5px 35px #00000080,
+    0 5px 35px #00000080;
+}
+#clock::before{
+    position: absolute;
+    content: "";
+    width: 280px;
+    height: 280px;
+    left: -35px;
+    top: -34px;
+    border: 18px solid #fdfefe;
+    border-radius: 50%;
+    z-index: -2;
+}
+#clock::after{
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    background: var(--gradient);
+    border-radius: 50%;
+    left: calc(50% - 9px);
+    top: calc(50% - 9px);
+    box-shadow: 0 2px 4px #00000026;
+}
+li{
+    list-style: none;
+    position: absolute;
+}
+.number{
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    font-weight: 600;
+    padding: 5%;
+    text-align: center;
+}
+.number span{
+    display: block;
+    color: var(--text);
+    font-size: 24px;
+    text-shadow: 0 5px 18px #00000026;
+}
+.number:nth-child(1){
+    transform: rotate(30deg);
+}
+.number:nth-child(1) span{
+    transform: rotate(-30deg);
+}
+.number:nth-child(2){
+    transform: rotate(60deg);
+}
+.number:nth-child(2) span{
+    transform: rotate(-60deg);
+}
+.number:nth-child(3){
+    transform: rotate(90deg);
+}
+.number:nth-child(3) span{
+    transform: rotate(-90deg);
+}
+.number:nth-child(4){
+    transform: rotate(120deg);
+}
+.number:nth-child(4) span{
+    transform: rotate(-120deg);
+}
+.number:nth-child(5){
+    transform: rotate(150deg);
+}
+.number:nth-child(5) span{
+    transform: rotate(-150deg);
+}
+.number:nth-child(6){
+    transform: rotate(180deg);
+}
+.number:nth-child(6) span{
+    transform: rotate(-180deg);
+}
+.number:nth-child(7){
+    transform: rotate(210deg);
+}
+.number:nth-child(7) span{
+    transform: rotate(-210deg);
+}
+.number:nth-child(8){
+    transform: rotate(240deg);
+}
+.number:nth-child(8) span{
+    transform: rotate(-240deg);
+}
+.number:nth-child(9){
+    transform: rotate(270deg);
+}
+.number:nth-child(9) span{
+    transform: rotate(-270deg);
+}
+.number:nth-child(10){
+    transform: rotate(300deg);
+}
+.number:nth-child(10) span{
+    transform: rotate(-300deg);
+}
+.number:nth-child(11){
+    transform: rotate(330deg);
+}
+.number:nth-child(11) span{
+    transform: rotate(-330deg);
+}
+.number:nth-child(12){
+    transform: rotate(360deg);
+}
+.number:nth-child(12) span{
+    transform: rotate(-360deg);
+}
+#second{
+    width: 100%;
+    height: 100%;
+    animation: sec 60s steps(60) infinite;
+}
+#second::after{
+    position: absolute;
+    content: "";
+    width: 8px;
+    height: 120px;
+    background: var(--text);
+    border-radius: 90% 90% 5% 5%;
+    left: calc(50% - 2px);
+    top: 40px;
+    box-shadow: 1px 2px 3px #00000026;
+}
+#minute{
+    width: 100%;
+    height: 100%;
+    animation: sec 3600s steps(60, end) infinite;
+}
+#minute::after{
+    position: absolute;
+    content: "";
+    width: 8px;
+    height: 90px;
+    background: var(--gradient);
+    border-radius: 2px 2px;
+    left: calc(50% + 30px);
+    top: 29%;
+    box-shadow: 1px 2px 3px #00000026;
+    transform: rotate(-120deg);
+}
+#hour{
+    width: 100%;
+    height: 100%;
+    transform: rotate(120deg);
+}
+#hour::after{
+    position: absolute;
+    content: "";
+    width: 12px;
+    height: 70px;
+    background: var(--gradient);
+    border-radius: 2px 2px;
+    left: calc(50% - 4px);
+    top: 50%;
+    box-shadow: 1px 2px 3px #00000026;
+}
+@keyframes sec {
+    to{
+        transform: rotate(360deg);
+    }
+    
+}
